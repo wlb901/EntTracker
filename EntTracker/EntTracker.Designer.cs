@@ -28,69 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.gamesButton = new System.Windows.Forms.Button();
+            this.videosButton = new System.Windows.Forms.Button();
+            this.booksButton = new System.Windows.Forms.Button();
+            this.musicButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // gamesButton
             // 
-            this.button1.Location = new System.Drawing.Point(28, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.gamesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gamesButton.Location = new System.Drawing.Point(28, 34);
+            this.gamesButton.Name = "gamesButton";
+            this.gamesButton.Size = new System.Drawing.Size(90, 31);
+            this.gamesButton.TabIndex = 0;
+            this.gamesButton.Text = "Games";
+            this.gamesButton.UseVisualStyleBackColor = true;
+            this.gamesButton.Click += new System.EventHandler(this.gamesButton_Click);
             // 
-            // button2
+            // videosButton
             // 
-            this.button2.Location = new System.Drawing.Point(226, 40);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.videosButton.Location = new System.Drawing.Point(195, 34);
+            this.videosButton.Name = "videosButton";
+            this.videosButton.Size = new System.Drawing.Size(90, 31);
+            this.videosButton.TabIndex = 1;
+            this.videosButton.Text = "Videos";
+            this.videosButton.UseVisualStyleBackColor = true;
+            this.videosButton.Click += new System.EventHandler(this.videosButton_Click);
             // 
-            // button3
+            // booksButton
             // 
-            this.button3.Location = new System.Drawing.Point(28, 94);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booksButton.Location = new System.Drawing.Point(28, 94);
+            this.booksButton.Name = "booksButton";
+            this.booksButton.Size = new System.Drawing.Size(90, 30);
+            this.booksButton.TabIndex = 2;
+            this.booksButton.Text = "Books";
+            this.booksButton.UseVisualStyleBackColor = true;
+            this.booksButton.Click += new System.EventHandler(this.booksButton_Click);
             // 
-            // button4
+            // musicButton
             // 
-            this.button4.Location = new System.Drawing.Point(226, 94);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicButton.Location = new System.Drawing.Point(195, 94);
+            this.musicButton.Name = "musicButton";
+            this.musicButton.Size = new System.Drawing.Size(90, 30);
+            this.musicButton.TabIndex = 3;
+            this.musicButton.Text = "Music";
+            this.musicButton.UseVisualStyleBackColor = true;
+            this.musicButton.Click += new System.EventHandler(this.musicButton_Click);
             // 
             // EntTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 150);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(311, 150);
+            this.Controls.Add(this.musicButton);
+            this.Controls.Add(this.booksButton);
+            this.Controls.Add(this.videosButton);
+            this.Controls.Add(this.gamesButton);
             this.Name = "EntTracker";
-            this.Text = "Entertainment Tracker";
+            this.Text = "Ent Tracker";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button gamesButton;
+        private System.Windows.Forms.Button videosButton;
+        private System.Windows.Forms.Button booksButton;
+        private System.Windows.Forms.Button musicButton;
     }
 }
 

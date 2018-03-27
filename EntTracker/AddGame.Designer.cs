@@ -28,172 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.reviewRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.ratingLabel = new System.Windows.Forms.Label();
+            this.genreLabel = new System.Windows.Forms.Label();
+            this.ratingComboBox = new System.Windows.Forms.ComboBox();
+            this.genresCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.reviewLabel = new System.Windows.Forms.Label();
+            this.pictureLabel = new System.Windows.Forms.Label();
+            this.pictureTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(153, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
+            this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleTextBox.Location = new System.Drawing.Point(153, 44);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(280, 28);
+            this.titleTextBox.TabIndex = 0;
             // 
-            // textBox2
+            // reviewRichTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(153, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 1;
+            this.reviewRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewRichTextBox.Location = new System.Drawing.Point(59, 358);
+            this.reviewRichTextBox.Name = "reviewRichTextBox";
+            this.reviewRichTextBox.Size = new System.Drawing.Size(374, 225);
+            this.reviewRichTextBox.TabIndex = 8;
+            this.reviewRichTextBox.Text = "";
             // 
-            // textBox3
+            // submitButton
             // 
-            this.textBox3.Location = new System.Drawing.Point(153, 142);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 2;
+            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.Location = new System.Drawing.Point(128, 603);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(83, 34);
+            this.submitButton.TabIndex = 9;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // radioButton1
+            // cancelButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(72, 225);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 21);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(289, 603);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(83, 34);
+            this.cancelButton.TabIndex = 10;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // radioButton2
+            // titleLabel
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(72, 280);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(110, 21);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(55, 44);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(45, 24);
+            this.titleLabel.TabIndex = 11;
+            this.titleLabel.Text = "Title";
             // 
-            // radioButton3
+            // ratingLabel
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(72, 325);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 21);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.ratingLabel.AutoSize = true;
+            this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ratingLabel.Location = new System.Drawing.Point(55, 87);
+            this.ratingLabel.Name = "ratingLabel";
+            this.ratingLabel.Size = new System.Drawing.Size(63, 24);
+            this.ratingLabel.TabIndex = 12;
+            this.ratingLabel.Text = "Rating";
             // 
-            // radioButton4
+            // genreLabel
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(251, 225);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(110, 21);
-            this.radioButton4.TabIndex = 6;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genreLabel.Location = new System.Drawing.Point(55, 134);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(63, 24);
+            this.genreLabel.TabIndex = 13;
+            this.genreLabel.Text = "Genre";
             // 
-            // radioButton5
+            // ratingComboBox
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(251, 280);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(110, 21);
-            this.radioButton5.TabIndex = 7;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "radioButton5";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.ratingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ratingComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ratingComboBox.FormattingEnabled = true;
+            this.ratingComboBox.Items.AddRange(new object[] {
+            "-",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.ratingComboBox.Location = new System.Drawing.Point(153, 87);
+            this.ratingComboBox.Name = "ratingComboBox";
+            this.ratingComboBox.Size = new System.Drawing.Size(69, 30);
+            this.ratingComboBox.TabIndex = 14;
             // 
-            // richTextBox1
+            // genresCheckedListBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(72, 405);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(289, 96);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.genresCheckedListBox.FormattingEnabled = true;
+            this.genresCheckedListBox.Items.AddRange(new object[] {
+            "Action",
+            "Adventure",
+            "RPG",
+            "FPS",
+            "MMO",
+            "Strategy"});
+            this.genresCheckedListBox.Location = new System.Drawing.Point(153, 134);
+            this.genresCheckedListBox.Name = "genresCheckedListBox";
+            this.genresCheckedListBox.Size = new System.Drawing.Size(173, 89);
+            this.genresCheckedListBox.TabIndex = 15;
             // 
-            // button1
+            // statusLabel
             // 
-            this.button1.Location = new System.Drawing.Point(72, 612);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(55, 238);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(60, 24);
+            this.statusLabel.TabIndex = 16;
+            this.statusLabel.Text = "Status";
             // 
-            // button2
+            // statusComboBox
             // 
-            this.button2.Location = new System.Drawing.Point(251, 611);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "Completed",
+            "Plan to Play",
+            "Playing",
+            "On Hold",
+            "Dropped"});
+            this.statusComboBox.Location = new System.Drawing.Point(153, 238);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(173, 30);
+            this.statusComboBox.TabIndex = 17;
             // 
-            // label1
+            // reviewLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
+            this.reviewLabel.AutoSize = true;
+            this.reviewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewLabel.Location = new System.Drawing.Point(55, 331);
+            this.reviewLabel.Name = "reviewLabel";
+            this.reviewLabel.Size = new System.Drawing.Size(72, 24);
+            this.reviewLabel.TabIndex = 18;
+            this.reviewLabel.Text = "Review";
             // 
-            // label2
+            // pictureLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
+            this.pictureLabel.AutoSize = true;
+            this.pictureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pictureLabel.Location = new System.Drawing.Point(55, 285);
+            this.pictureLabel.Name = "pictureLabel";
+            this.pictureLabel.Size = new System.Drawing.Size(68, 24);
+            this.pictureLabel.TabIndex = 19;
+            this.pictureLabel.Text = "Picture";
             // 
-            // label3
+            // pictureTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "label3";
+            this.pictureTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pictureTextBox.Location = new System.Drawing.Point(153, 285);
+            this.pictureTextBox.Name = "pictureTextBox";
+            this.pictureTextBox.Size = new System.Drawing.Size(173, 28);
+            this.pictureTextBox.TabIndex = 20;
+            this.pictureTextBox.TextChanged += new System.EventHandler(this.pictureTextBox_TextChanged);
             // 
             // AddGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 664);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(493, 664);
+            this.Controls.Add(this.pictureTextBox);
+            this.Controls.Add(this.pictureLabel);
+            this.Controls.Add(this.reviewLabel);
+            this.Controls.Add(this.statusComboBox);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.genresCheckedListBox);
+            this.Controls.Add(this.ratingComboBox);
+            this.Controls.Add(this.genreLabel);
+            this.Controls.Add(this.ratingLabel);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.reviewRichTextBox);
+            this.Controls.Add(this.titleTextBox);
             this.Name = "AddGame";
-            this.Text = "AddGame";
+            this.Text = "Add Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,19 +233,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox titleTextBox;
+        private System.Windows.Forms.RichTextBox reviewRichTextBox;
+        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label ratingLabel;
+        private System.Windows.Forms.Label genreLabel;
+        private System.Windows.Forms.ComboBox ratingComboBox;
+        private System.Windows.Forms.CheckedListBox genresCheckedListBox;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ComboBox statusComboBox;
+        private System.Windows.Forms.Label reviewLabel;
+        private System.Windows.Forms.Label pictureLabel;
+        private System.Windows.Forms.TextBox pictureTextBox;
     }
 }
