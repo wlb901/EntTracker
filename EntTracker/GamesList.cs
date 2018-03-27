@@ -17,9 +17,33 @@ namespace EntTracker
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void booksButton_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddGame addGameForm = new AddGame();
+            addGameForm.ShowDialog();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void videosButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void musicButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

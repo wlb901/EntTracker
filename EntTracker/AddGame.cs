@@ -16,5 +16,24 @@ namespace EntTracker
         {
             InitializeComponent();
         }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GamesList gamesListForm = new GamesList();
+            gamesListForm.ShowDialog();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GamesList gamesListForm = new GamesList();
+            gamesListForm.ShowDialog();
+        }
+
+        private void pictureTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //open file selection
+        }
     }
 }

@@ -28,147 +28,191 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.videosButton = new System.Windows.Forms.Button();
+            this.booksButton = new System.Windows.Forms.Button();
+            this.musicButton = new System.Windows.Forms.Button();
+            this.sortComboBox = new System.Windows.Forms.ComboBox();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.gamesDataGridView = new System.Windows.Forms.DataGridView();
+            this.Title = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gamesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // addButton
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(26, 159);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(497, 324);
-            this.listBox1.TabIndex = 0;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addButton.Location = new System.Drawing.Point(26, 470);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 33);
+            this.addButton.TabIndex = 5;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // linkLabel1
+            // videosButton
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(58, 124);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(72, 17);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
+            this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.videosButton.Location = new System.Drawing.Point(428, 470);
+            this.videosButton.Name = "videosButton";
+            this.videosButton.Size = new System.Drawing.Size(79, 33);
+            this.videosButton.TabIndex = 6;
+            this.videosButton.Text = "Videos";
+            this.videosButton.UseVisualStyleBackColor = true;
+            this.videosButton.Click += new System.EventHandler(this.videosButton_Click);
             // 
-            // linkLabel2
+            // booksButton
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(156, 124);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(72, 17);
-            this.linkLabel2.TabIndex = 2;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "linkLabel2";
+            this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booksButton.Location = new System.Drawing.Point(513, 470);
+            this.booksButton.Name = "booksButton";
+            this.booksButton.Size = new System.Drawing.Size(75, 33);
+            this.booksButton.TabIndex = 7;
+            this.booksButton.Text = "Books";
+            this.booksButton.UseVisualStyleBackColor = true;
+            this.booksButton.Click += new System.EventHandler(this.booksButton_Click);
             // 
-            // linkLabel3
+            // musicButton
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(288, 124);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(72, 17);
-            this.linkLabel3.TabIndex = 3;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "linkLabel3";
+            this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.musicButton.Location = new System.Drawing.Point(594, 470);
+            this.musicButton.Name = "musicButton";
+            this.musicButton.Size = new System.Drawing.Size(75, 33);
+            this.musicButton.TabIndex = 8;
+            this.musicButton.Text = "Music";
+            this.musicButton.UseVisualStyleBackColor = true;
+            this.musicButton.Click += new System.EventHandler(this.musicButton_Click);
             // 
-            // linkLabel4
+            // sortComboBox
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(417, 124);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(72, 17);
-            this.linkLabel4.TabIndex = 4;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "linkLabel4";
+            this.sortComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortComboBox.FormattingEnabled = true;
+            this.sortComboBox.Items.AddRange(new object[] {
+            "Sort by Name",
+            "Sort by Rating"});
+            this.sortComboBox.Location = new System.Drawing.Point(26, 34);
+            this.sortComboBox.Name = "sortComboBox";
+            this.sortComboBox.Size = new System.Drawing.Size(156, 30);
+            this.sortComboBox.TabIndex = 9;
             // 
-            // button1
+            // statusComboBox
             // 
-            this.button1.Location = new System.Drawing.Point(26, 537);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "All",
+            "Playing",
+            "Plan to Play",
+            "On Hold",
+            "Dropped"});
+            this.statusComboBox.Location = new System.Drawing.Point(209, 34);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(140, 30);
+            this.statusComboBox.TabIndex = 10;
             // 
-            // button2
+            // deleteButton
             // 
-            this.button2.Location = new System.Drawing.Point(159, 537);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(107, 470);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 33);
+            this.deleteButton.TabIndex = 11;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // button3
+            // gamesDataGridView
             // 
-            this.button3.Location = new System.Drawing.Point(291, 537);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.gamesDataGridView.AllowUserToAddRows = false;
+            this.gamesDataGridView.AllowUserToDeleteRows = false;
+            this.gamesDataGridView.AllowUserToOrderColumns = true;
+            this.gamesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gamesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Title,
+            this.Rating,
+            this.Status,
+            this.Genres});
+            this.gamesDataGridView.Location = new System.Drawing.Point(26, 70);
+            this.gamesDataGridView.Name = "gamesDataGridView";
+            this.gamesDataGridView.ReadOnly = true;
+            this.gamesDataGridView.RowTemplate.Height = 24;
+            this.gamesDataGridView.Size = new System.Drawing.Size(643, 394);
+            this.gamesDataGridView.TabIndex = 12;
             // 
-            // button4
+            // Title
             // 
-            this.button4.Location = new System.Drawing.Point(448, 537);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Title.Width = 200;
             // 
-            // checkBox1
+            // Rating
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 76);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Rating.HeaderText = "Rating";
+            this.Rating.Name = "Rating";
+            this.Rating.ReadOnly = true;
+            this.Rating.Width = 55;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Genres
+            // 
+            this.Genres.HeaderText = "Genres";
+            this.Genres.Name = "Genres";
+            this.Genres.ReadOnly = true;
+            this.Genres.Width = 245;
+
+
+            //Add games to List
+            this.gamesDataGridView.Rows.Add("Batman", "9/10", "Completed", "Action, Fighting");
+            this.gamesDataGridView.Rows.Add("Baseball", "8/10", "Completed", "Sports");
+
+
             // 
             // GamesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 589);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(699, 529);
+            this.Controls.Add(this.gamesDataGridView);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.statusComboBox);
+            this.Controls.Add(this.sortComboBox);
+            this.Controls.Add(this.musicButton);
+            this.Controls.Add(this.booksButton);
+            this.Controls.Add(this.videosButton);
+            this.Controls.Add(this.addButton);
             this.Name = "GamesList";
-            this.Text = "GamesList";
+            this.Text = "Games List";
+            ((System.ComponentModel.ISupportInitialize)(this.gamesDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button videosButton;
+        private System.Windows.Forms.Button booksButton;
+        private System.Windows.Forms.Button musicButton;
+        private System.Windows.Forms.ComboBox sortComboBox;
+        private System.Windows.Forms.ComboBox statusComboBox;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.DataGridView gamesDataGridView;
+        private System.Windows.Forms.DataGridViewLinkColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genres;
     }
 }

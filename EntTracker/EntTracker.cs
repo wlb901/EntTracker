@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace EntTracker
 {
     public partial class EntTracker : Form
@@ -16,5 +17,28 @@ namespace EntTracker
         {
             InitializeComponent();
         }
+
+        private void gamesButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GamesList gamesListForm = new GamesList();
+            gamesListForm.ShowDialog();
+        }
+
+        private void videosButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void booksButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void musicButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

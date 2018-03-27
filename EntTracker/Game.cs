@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EntTracker
 {
-    public partial class Games : Form
+    public partial class Game : Form
     {
-        public Games()
+        public Game()
         {
             InitializeComponent();
         }
