@@ -16,7 +16,7 @@ namespace EntTracker
         [STAThread]
         static void Main()
         {
-            try
+            /*try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
@@ -29,7 +29,7 @@ namespace EntTracker
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
