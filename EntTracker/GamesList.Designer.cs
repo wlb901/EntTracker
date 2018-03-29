@@ -1,4 +1,8 @@
-﻿namespace EntTracker
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Windows;
+
+namespace EntTracker
 {
     partial class GamesList
     {
@@ -46,9 +50,10 @@
             // addButton
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(26, 470);
+            this.addButton.Location = new System.Drawing.Point(32, 646);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 33);
+            this.addButton.Size = new System.Drawing.Size(94, 45);
             this.addButton.TabIndex = 5;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
@@ -57,9 +62,10 @@
             // videosButton
             // 
             this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.videosButton.Location = new System.Drawing.Point(428, 470);
+            this.videosButton.Location = new System.Drawing.Point(548, 646);
+            this.videosButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videosButton.Name = "videosButton";
-            this.videosButton.Size = new System.Drawing.Size(79, 33);
+            this.videosButton.Size = new System.Drawing.Size(99, 45);
             this.videosButton.TabIndex = 6;
             this.videosButton.Text = "Videos";
             this.videosButton.UseVisualStyleBackColor = true;
@@ -68,9 +74,10 @@
             // booksButton
             // 
             this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booksButton.Location = new System.Drawing.Point(513, 470);
+            this.booksButton.Location = new System.Drawing.Point(655, 646);
+            this.booksButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.booksButton.Name = "booksButton";
-            this.booksButton.Size = new System.Drawing.Size(75, 33);
+            this.booksButton.Size = new System.Drawing.Size(94, 45);
             this.booksButton.TabIndex = 7;
             this.booksButton.Text = "Books";
             this.booksButton.UseVisualStyleBackColor = true;
@@ -79,9 +86,10 @@
             // musicButton
             // 
             this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicButton.Location = new System.Drawing.Point(594, 470);
+            this.musicButton.Location = new System.Drawing.Point(757, 646);
+            this.musicButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.musicButton.Name = "musicButton";
-            this.musicButton.Size = new System.Drawing.Size(75, 33);
+            this.musicButton.Size = new System.Drawing.Size(94, 45);
             this.musicButton.TabIndex = 8;
             this.musicButton.Text = "Music";
             this.musicButton.UseVisualStyleBackColor = true;
@@ -95,9 +103,10 @@
             this.sortComboBox.Items.AddRange(new object[] {
             "Sort by Name",
             "Sort by Rating"});
-            this.sortComboBox.Location = new System.Drawing.Point(26, 34);
+            this.sortComboBox.Location = new System.Drawing.Point(32, 47);
+            this.sortComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(156, 30);
+            this.sortComboBox.Size = new System.Drawing.Size(194, 30);
             this.sortComboBox.TabIndex = 9;
             // 
             // statusComboBox
@@ -111,17 +120,19 @@
             "Plan to Play",
             "On Hold",
             "Dropped"});
-            this.statusComboBox.Location = new System.Drawing.Point(209, 34);
+            this.statusComboBox.Location = new System.Drawing.Point(261, 47);
+            this.statusComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(140, 30);
+            this.statusComboBox.Size = new System.Drawing.Size(174, 30);
             this.statusComboBox.TabIndex = 10;
             // 
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(107, 470);
+            this.deleteButton.Location = new System.Drawing.Point(134, 646);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 33);
+            this.deleteButton.Size = new System.Drawing.Size(94, 45);
             this.deleteButton.TabIndex = 11;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -138,12 +149,14 @@
             this.Rating,
             this.Status,
             this.Genres});
-            this.gamesDataGridView.Location = new System.Drawing.Point(26, 70);
+            this.gamesDataGridView.Location = new System.Drawing.Point(32, 96);
+            this.gamesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gamesDataGridView.Name = "gamesDataGridView";
             this.gamesDataGridView.ReadOnly = true;
             this.gamesDataGridView.RowTemplate.Height = 24;
-            this.gamesDataGridView.Size = new System.Drawing.Size(643, 394);
+            this.gamesDataGridView.Size = new System.Drawing.Size(819, 542);
             this.gamesDataGridView.TabIndex = 12;
+            this.gamesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gamesDataGridView_CellContentClick);//here
             // 
             // Title
             // 
@@ -152,40 +165,34 @@
             this.Title.ReadOnly = true;
             this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Title.Width = 200;
+            this.Title.Width = 250;
             // 
             // Rating
             // 
             this.Rating.HeaderText = "Rating";
             this.Rating.Name = "Rating";
             this.Rating.ReadOnly = true;
-            this.Rating.Width = 55;
+            this.Rating.Width = 75;
             // 
             // Status
             // 
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
+            this.Status.Width = 150;
             // 
             // Genres
             // 
             this.Genres.HeaderText = "Genres";
             this.Genres.Name = "Genres";
             this.Genres.ReadOnly = true;
-            this.Genres.Width = 245;
-
-
-            //Add games to List
-            this.gamesDataGridView.Rows.Add("Batman", "9/10", "Completed", "Action, Fighting");
-            this.gamesDataGridView.Rows.Add("Baseball", "8/10", "Completed", "Sports");
-
-
+            this.Genres.Width = 300;
             // 
             // GamesList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 529);
+            this.ClientSize = new System.Drawing.Size(884, 727);
             this.Controls.Add(this.gamesDataGridView);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.statusComboBox);
@@ -194,7 +201,10 @@
             this.Controls.Add(this.booksButton);
             this.Controls.Add(this.videosButton);
             this.Controls.Add(this.addButton);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GamesList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Games List";
             ((System.ComponentModel.ISupportInitialize)(this.gamesDataGridView)).EndInit();
             this.ResumeLayout(false);

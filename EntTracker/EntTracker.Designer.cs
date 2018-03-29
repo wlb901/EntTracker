@@ -37,9 +37,10 @@
             // gamesButton
             // 
             this.gamesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gamesButton.Location = new System.Drawing.Point(28, 34);
+            this.gamesButton.Location = new System.Drawing.Point(35, 47);
+            this.gamesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gamesButton.Name = "gamesButton";
-            this.gamesButton.Size = new System.Drawing.Size(90, 31);
+            this.gamesButton.Size = new System.Drawing.Size(112, 43);
             this.gamesButton.TabIndex = 0;
             this.gamesButton.Text = "Games";
             this.gamesButton.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // videosButton
             // 
             this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.videosButton.Location = new System.Drawing.Point(195, 34);
+            this.videosButton.Location = new System.Drawing.Point(244, 47);
+            this.videosButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videosButton.Name = "videosButton";
-            this.videosButton.Size = new System.Drawing.Size(90, 31);
+            this.videosButton.Size = new System.Drawing.Size(112, 43);
             this.videosButton.TabIndex = 1;
             this.videosButton.Text = "Videos";
             this.videosButton.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // booksButton
             // 
             this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booksButton.Location = new System.Drawing.Point(28, 94);
+            this.booksButton.Location = new System.Drawing.Point(35, 129);
+            this.booksButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.booksButton.Name = "booksButton";
-            this.booksButton.Size = new System.Drawing.Size(90, 30);
+            this.booksButton.Size = new System.Drawing.Size(112, 41);
             this.booksButton.TabIndex = 2;
             this.booksButton.Text = "Books";
             this.booksButton.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // musicButton
             // 
             this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicButton.Location = new System.Drawing.Point(195, 94);
+            this.musicButton.Location = new System.Drawing.Point(244, 129);
+            this.musicButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.musicButton.Name = "musicButton";
-            this.musicButton.Size = new System.Drawing.Size(90, 30);
+            this.musicButton.Size = new System.Drawing.Size(112, 41);
             this.musicButton.TabIndex = 3;
             this.musicButton.Text = "Music";
             this.musicButton.UseVisualStyleBackColor = true;
@@ -80,14 +84,17 @@
             // 
             // EntTracker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 150);
+            this.ClientSize = new System.Drawing.Size(389, 206);
             this.Controls.Add(this.musicButton);
             this.Controls.Add(this.booksButton);
             this.Controls.Add(this.videosButton);
             this.Controls.Add(this.gamesButton);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EntTracker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ent Tracker";
             this.ResumeLayout(false);
 

@@ -15,6 +15,8 @@ namespace EntTracker
         public Game()
         {
             InitializeComponent();
+            string title = GamesList.getTitle();
+            Console.WriteLine("Title: " + title);
         }
     }
 }
