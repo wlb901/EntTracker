@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.ratingLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.genresLabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.reviewLabel = new System.Windows.Forms.Label();
+            this.reviewBox = new System.Windows.Forms.TextBox();
+            this.titleBox = new System.Windows.Forms.TextBox();
+            this.ratingBox = new System.Windows.Forms.TextBox();
+            this.genresBox = new System.Windows.Forms.TextBox();
+            this.statusBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 179);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(240, 179);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // titleLabel
             // 
@@ -74,113 +74,113 @@
             this.ratingLabel.TabIndex = 2;
             this.ratingLabel.Text = "Rating:";
             // 
-            // label3
+            // genresLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 317);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Genres:";
+            this.genresLabel.AutoSize = true;
+            this.genresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genresLabel.Location = new System.Drawing.Point(13, 371);
+            this.genresLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.genresLabel.Name = "genresLabel";
+            this.genresLabel.Size = new System.Drawing.Size(77, 24);
+            this.genresLabel.TabIndex = 3;
+            this.genresLabel.Text = "Genres:";
             // 
-            // label4
+            // statusLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 366);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Status:";
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(13, 318);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(65, 24);
+            this.statusLabel.TabIndex = 4;
+            this.statusLabel.Text = "Status:";
             // 
-            // label5
+            // reviewLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 413);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Review:";
+            this.reviewLabel.AutoSize = true;
+            this.reviewLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewLabel.Location = new System.Drawing.Point(13, 413);
+            this.reviewLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.reviewLabel.Name = "reviewLabel";
+            this.reviewLabel.Size = new System.Drawing.Size(77, 24);
+            this.reviewLabel.TabIndex = 5;
+            this.reviewLabel.Text = "Review:";
             // 
-            // textBox1
+            // reviewBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(13, 441);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(682, 400);
-            this.textBox1.TabIndex = 6;
+            this.reviewBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewBox.Location = new System.Drawing.Point(13, 441);
+            this.reviewBox.Margin = new System.Windows.Forms.Padding(4);
+            this.reviewBox.Multiline = true;
+            this.reviewBox.Name = "reviewBox";
+            this.reviewBox.ReadOnly = true;
+            this.reviewBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.reviewBox.Size = new System.Drawing.Size(682, 400);
+            this.reviewBox.TabIndex = 6;
             // 
-            // textBox2
+            // titleBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(98, 213);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(572, 28);
-            this.textBox2.TabIndex = 7;
+            this.titleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleBox.Location = new System.Drawing.Point(98, 213);
+            this.titleBox.Margin = new System.Windows.Forms.Padding(4);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.ReadOnly = true;
+            this.titleBox.Size = new System.Drawing.Size(572, 28);
+            this.titleBox.TabIndex = 7;
             // 
-            // textBox3
+            // ratingBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(98, 264);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(44, 28);
-            this.textBox3.TabIndex = 8;
+            this.ratingBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ratingBox.Location = new System.Drawing.Point(98, 264);
+            this.ratingBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ratingBox.Name = "ratingBox";
+            this.ratingBox.ReadOnly = true;
+            this.ratingBox.Size = new System.Drawing.Size(44, 28);
+            this.ratingBox.TabIndex = 8;
             // 
-            // textBox4
+            // genresBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(98, 313);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(572, 28);
-            this.textBox4.TabIndex = 9;
+            this.genresBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genresBox.Location = new System.Drawing.Point(98, 371);
+            this.genresBox.Margin = new System.Windows.Forms.Padding(4);
+            this.genresBox.Name = "genresBox";
+            this.genresBox.ReadOnly = true;
+            this.genresBox.Size = new System.Drawing.Size(572, 28);
+            this.genresBox.TabIndex = 9;
             // 
-            // textBox5
+            // statusBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(98, 363);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(164, 28);
-            this.textBox5.TabIndex = 10;
+            this.statusBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusBox.Location = new System.Drawing.Point(98, 315);
+            this.statusBox.Margin = new System.Windows.Forms.Padding(4);
+            this.statusBox.Name = "statusBox";
+            this.statusBox.ReadOnly = true;
+            this.statusBox.Size = new System.Drawing.Size(164, 28);
+            this.statusBox.TabIndex = 10;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 855);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.statusBox);
+            this.Controls.Add(this.genresBox);
+            this.Controls.Add(this.ratingBox);
+            this.Controls.Add(this.titleBox);
+            this.Controls.Add(this.reviewBox);
+            this.Controls.Add(this.reviewLabel);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.genresLabel);
             this.Controls.Add(this.ratingLabel);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,16 +188,41 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label ratingLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label genresLabel;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label reviewLabel;
+        private System.Windows.Forms.TextBox reviewBox;
+        private System.Windows.Forms.TextBox titleBox;
+        private System.Windows.Forms.TextBox ratingBox;
+        private System.Windows.Forms.TextBox genresBox;
+        private System.Windows.Forms.TextBox statusBox;
+
+        public void setTitle(string title)
+        {
+            titleBox.Text = title;
+        }
+
+        public void setRating(string rating)
+        {
+            ratingBox.Text = rating;
+        }
+
+        public void setGenres(string genres)
+        {
+            genresBox.Text = genres;
+        }
+
+        public void setStatus(string status)
+        {
+            statusBox.Text = status;
+        }
+
+        public void setReview(string review)
+        {
+            reviewBox.Text = review;
+        }
     }
 }
