@@ -16,7 +16,17 @@ namespace EntTracker
         {
             InitializeComponent();
             string title = GamesList.getTitle();
-            Console.WriteLine("Title: " + title);
+            string rating = GamesList.getRating();
+            string genres = GamesList.getGenres();
+            string status = GamesList.getStatus();
+            string review = GamesList.getReview();
+           
+            setTitle(title);
+            setRating(rating);
+            setGenres(genres);
+            setStatus(status);
+            setReview(review);
+            
         }
     }
 }

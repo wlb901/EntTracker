@@ -14,6 +14,10 @@ namespace EntTracker
     public partial class GamesList : Form
     {
         static string title = "";
+        static string rating = "";
+        static string status = "";
+        static string genres = "";
+        static string review = "";
 
         public GamesList()
         {
@@ -28,6 +32,8 @@ namespace EntTracker
                 //MessageBox.Show("Connected");
 
                 string mySelectQuery = "use mydb; select * from games;";
+                Console.WriteLine("Test");
+                Console.WriteLine(mySelectQuery);
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
                 connect.Open();
                 MySqlDataReader myReader;
@@ -36,7 +42,8 @@ namespace EntTracker
                 {
                     while (myReader.Read())
                     {
-                        this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4));
+                        this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4), myReader.GetString(5));
+                        //review = myReader.GetString(5);
                         Console.WriteLine(myReader.GetString(1));
                     }
                 }
@@ -109,6 +116,10 @@ namespace EntTracker
             if (e.ColumnIndex == 0)
             {
                 title = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                rating = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value.ToString();
+                status = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString();
+                genres = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value.ToString();
+                review = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString();
                 Console.WriteLine(title);
                 //this.Hide();
                 Game gameForm = new Game();
@@ -123,6 +134,22 @@ namespace EntTracker
         public static string getTitle()
         {
             return title;
+        }
+        public static string getRating()
+        {
+            return rating;
+        }
+        public static string getStatus()
+        {
+            return status;
+        }
+        public static string getGenres()
+        {
+            return genres;
+        }
+        public static string getReview()
+        {
+            return review;
         }
     }
 }
