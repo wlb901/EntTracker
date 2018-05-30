@@ -148,18 +148,35 @@
             this.genresCheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genresCheckedListBox.FormattingEnabled = true;
             this.genresCheckedListBox.Items.AddRange(new object[] {
-            "Action",
-            "Adventure",
-            "RPG",
-            "FPS",
-            "MMO",
-            "Strategy",
-            "Sports",
-            "one",
-            "two",
-            "three",
-            "four",
-            "five"});
+            "4X ",
+            "Action ",
+            "Adventure ",
+            "Board Game ",
+            "Casual ",
+            "Educational ",
+            "Fantasy ",
+            "Fighting ",
+            "Horror ",
+            "Indie ",
+            "Logic ",
+            "MMO ",
+            "MOBA ",
+            "Platformer ",
+            "Puzzle ",
+            "Racing ",
+            "Rhythm ",
+            "RPG ",
+            "RTS ",
+            "Sandbox ",
+            "Shooter ",
+            "Simulation ",
+            "Sports ",
+            "Stealth ",
+            "Strategy ",
+            "Survival ",
+            "Tower Defense ",
+            "Trivia ",
+            "Turn Based "});
             this.genresCheckedListBox.Location = new System.Drawing.Point(191, 184);
             this.genresCheckedListBox.Margin = new System.Windows.Forms.Padding(4);
             this.genresCheckedListBox.Name = "genresCheckedListBox";
