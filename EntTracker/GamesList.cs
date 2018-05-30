@@ -75,7 +75,7 @@ namespace EntTracker
             addGameForm.ShowDialog();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void findButton_Click(object sender, EventArgs e)
         {
 
         }

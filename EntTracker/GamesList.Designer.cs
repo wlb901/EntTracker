@@ -36,7 +36,7 @@ namespace EntTracker
             this.videosButton = new System.Windows.Forms.Button();
             this.booksButton = new System.Windows.Forms.Button();
             this.musicButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
+            this.findButton = new System.Windows.Forms.Button();
             this.gamesDataGridView = new System.Windows.Forms.DataGridView();
             this.TitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RatingColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,17 +94,17 @@ namespace EntTracker
             this.musicButton.UseVisualStyleBackColor = true;
             this.musicButton.Click += new System.EventHandler(this.musicButton_Click);
             // 
-            // deleteButton
+            // findButton
             // 
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(134, 563);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(94, 45);
-            this.deleteButton.TabIndex = 11;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.findButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findButton.Location = new System.Drawing.Point(134, 563);
+            this.findButton.Margin = new System.Windows.Forms.Padding(4);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(94, 45);
+            this.findButton.TabIndex = 11;
+            this.findButton.Text = "Find";
+            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
             // gamesDataGridView
             // 
@@ -168,7 +168,7 @@ namespace EntTracker
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 618);
             this.Controls.Add(this.gamesDataGridView);
-            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.findButton);
             this.Controls.Add(this.musicButton);
             this.Controls.Add(this.booksButton);
             this.Controls.Add(this.videosButton);
@@ -188,7 +188,7 @@ namespace EntTracker
         private System.Windows.Forms.Button videosButton;
         private System.Windows.Forms.Button booksButton;
         private System.Windows.Forms.Button musicButton;
-        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.DataGridView gamesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn TitleColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RatingColumn;

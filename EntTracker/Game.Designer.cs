@@ -39,6 +39,8 @@
             this.ratingBox = new System.Windows.Forms.TextBox();
             this.genresBox = new System.Windows.Forms.TextBox();
             this.statusBox = new System.Windows.Forms.TextBox();
+            this.editButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,11 +161,31 @@
             this.statusBox.Size = new System.Drawing.Size(164, 28);
             this.statusBox.TabIndex = 10;
             // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(539, 848);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 45);
+            this.editButton.TabIndex = 11;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(620, 848);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 45);
+            this.deleteButton.TabIndex = 12;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 855);
+            this.ClientSize = new System.Drawing.Size(710, 901);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.genresBox);
             this.Controls.Add(this.ratingBox);
@@ -224,5 +246,8 @@
         {
             reviewBox.Text = review;
         }
+
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
