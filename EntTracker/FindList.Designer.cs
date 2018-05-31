@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace EntTracker
 {
-    partial class GamesList
+    partial class FindList
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,7 @@ namespace EntTracker
         /// </summary>
         private void InitializeComponent()
         {
-            this.addButton = new System.Windows.Forms.Button();
-            this.videosButton = new System.Windows.Forms.Button();
-            this.booksButton = new System.Windows.Forms.Button();
-            this.musicButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.findButton = new System.Windows.Forms.Button();
             this.gamesDataGridView = new System.Windows.Forms.DataGridView();
             this.TitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,58 +43,21 @@ namespace EntTracker
             ((System.ComponentModel.ISupportInitialize)(this.gamesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // addButton
+            // backButton
             // 
-            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(32, 563);
-            this.addButton.Margin = new System.Windows.Forms.Padding(4);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(94, 45);
-            this.addButton.TabIndex = 5;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // videosButton
-            // 
-            this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.videosButton.Location = new System.Drawing.Point(548, 563);
-            this.videosButton.Margin = new System.Windows.Forms.Padding(4);
-            this.videosButton.Name = "videosButton";
-            this.videosButton.Size = new System.Drawing.Size(99, 45);
-            this.videosButton.TabIndex = 6;
-            this.videosButton.Text = "Videos";
-            this.videosButton.UseVisualStyleBackColor = true;
-            this.videosButton.Click += new System.EventHandler(this.videosButton_Click);
-            // 
-            // booksButton
-            // 
-            this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booksButton.Location = new System.Drawing.Point(655, 563);
-            this.booksButton.Margin = new System.Windows.Forms.Padding(4);
-            this.booksButton.Name = "booksButton";
-            this.booksButton.Size = new System.Drawing.Size(94, 45);
-            this.booksButton.TabIndex = 7;
-            this.booksButton.Text = "Books";
-            this.booksButton.UseVisualStyleBackColor = true;
-            this.booksButton.Click += new System.EventHandler(this.booksButton_Click);
-            // 
-            // musicButton
-            // 
-            this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicButton.Location = new System.Drawing.Point(757, 563);
-            this.musicButton.Margin = new System.Windows.Forms.Padding(4);
-            this.musicButton.Name = "musicButton";
-            this.musicButton.Size = new System.Drawing.Size(94, 45);
-            this.musicButton.TabIndex = 8;
-            this.musicButton.Text = "Music";
-            this.musicButton.UseVisualStyleBackColor = true;
-            this.musicButton.Click += new System.EventHandler(this.musicButton_Click);
+            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.Location = new System.Drawing.Point(757, 563);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(94, 45);
+            this.backButton.TabIndex = 5;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
             // 
             // findButton
             // 
             this.findButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findButton.Location = new System.Drawing.Point(134, 563);
+            this.findButton.Location = new System.Drawing.Point(655, 563);
             this.findButton.Margin = new System.Windows.Forms.Padding(4);
             this.findButton.Name = "findButton";
             this.findButton.Size = new System.Drawing.Size(94, 45);
@@ -162,22 +122,19 @@ namespace EntTracker
             this.ReviewColumn.ReadOnly = true;
             this.ReviewColumn.Width = 175;
             // 
-            // GamesList
+            // FindList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 618);
             this.Controls.Add(this.gamesDataGridView);
             this.Controls.Add(this.findButton);
-            this.Controls.Add(this.musicButton);
-            this.Controls.Add(this.booksButton);
-            this.Controls.Add(this.videosButton);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.backButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "GamesList";
+            this.Name = "FindList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Games List";
+            this.Text = "Find List";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GamesList_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gamesDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -185,10 +142,7 @@ namespace EntTracker
         }
 
         #endregion
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button videosButton;
-        private System.Windows.Forms.Button booksButton;
-        private System.Windows.Forms.Button musicButton;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.DataGridView gamesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn TitleColumn;

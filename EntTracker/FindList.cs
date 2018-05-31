@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace EntTracker
 {
-    public partial class GamesList : Form
+    public partial class FindList : Form
     {
         static string title = "";
         static string rating = "";
@@ -19,11 +19,15 @@ namespace EntTracker
         static string genres = "";
         static string review = "";
 
-        public GamesList()
+        public FindList()
         {
             InitializeComponent();
-            //Add games to List
-            
+
+            SearchForm search = new SearchForm();
+            search.ShowDialog();
+            string title = search.getSearchText();
+            Console.WriteLine(title + " results of search");
+
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
@@ -31,7 +35,7 @@ namespace EntTracker
 
                 //MessageBox.Show("Connected");
 
-                string mySelectQuery = "use mydb; select * from games;";
+                string mySelectQuery = "use mydb; select * from games where title like '" + title + "%';";
                 Console.WriteLine("Test");
                 Console.WriteLine(mySelectQuery);
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
@@ -63,60 +67,27 @@ namespace EntTracker
 
         }
 
-        private void booksButton_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddGame addGameForm = new AddGame();
-            addGameForm.ShowDialog();
+            GamesList gamesList = new GamesList();
+            gamesList.ShowDialog();
         }
 
         private void findButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FindList findGamesList = new FindList();
-            findGamesList.ShowDialog();
-            //SearchForm search = new SearchForm();
-            //search.ShowDialog();
+            FindList find = new FindList();
+            find.ShowDialog();
         }
 
-        private void videosButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void musicButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void GameListClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                //Environment.Exit(0);
-                Console.WriteLine("exit");
-                Application.Exit();
-            }
-            if (this.DialogResult == DialogResult.Cancel)
-            {
-                Console.WriteLine("here");
-                Application.Exit();
-            }
-            if (this.DialogResult == DialogResult.Abort)
-            {
-                Console.WriteLine("this");
-                Application.Exit();
-            }
-        }
+        
 
         private void gamesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (e.ColumnIndex == 0)
             {
                 title = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
@@ -129,10 +100,6 @@ namespace EntTracker
                 Game gameForm = new Game();
                 gameForm.ShowDialog();
             }
-            //DataGridViewImageCell cell = (DataGridViewImageCell)
-            //gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-            //Console.WriteLine(sender);
         }
 
         public static string getTitle()

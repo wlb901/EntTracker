@@ -38,7 +38,7 @@
             // 
             this.gamesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gamesButton.Location = new System.Drawing.Point(35, 47);
-            this.gamesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gamesButton.Margin = new System.Windows.Forms.Padding(4);
             this.gamesButton.Name = "gamesButton";
             this.gamesButton.Size = new System.Drawing.Size(112, 43);
             this.gamesButton.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.videosButton.Location = new System.Drawing.Point(244, 47);
-            this.videosButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.videosButton.Margin = new System.Windows.Forms.Padding(4);
             this.videosButton.Name = "videosButton";
             this.videosButton.Size = new System.Drawing.Size(112, 43);
             this.videosButton.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.booksButton.Location = new System.Drawing.Point(35, 129);
-            this.booksButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.booksButton.Margin = new System.Windows.Forms.Padding(4);
             this.booksButton.Name = "booksButton";
             this.booksButton.Size = new System.Drawing.Size(112, 41);
             this.booksButton.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.musicButton.Location = new System.Drawing.Point(244, 129);
-            this.musicButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.musicButton.Margin = new System.Windows.Forms.Padding(4);
             this.musicButton.Name = "musicButton";
             this.musicButton.Size = new System.Drawing.Size(112, 41);
             this.musicButton.TabIndex = 3;
@@ -92,10 +92,11 @@
             this.Controls.Add(this.videosButton);
             this.Controls.Add(this.gamesButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EntTracker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ent Tracker";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EntTracker_FormClosing);
             this.ResumeLayout(false);
 
         }
