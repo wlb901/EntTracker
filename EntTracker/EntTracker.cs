@@ -39,6 +39,11 @@ namespace EntTracker
         {
 
         }
+
+        private void EntTracker_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 
 }
