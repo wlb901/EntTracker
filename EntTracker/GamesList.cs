@@ -18,6 +18,7 @@ namespace EntTracker
         static string status = "";
         static string genres = "";
         static string review = "";
+        static string location = "";
 
         public GamesList()
         {
@@ -32,8 +33,6 @@ namespace EntTracker
                 //MessageBox.Show("Connected");
 
                 string mySelectQuery = "use mydb; select * from games;";
-                Console.WriteLine("Test");
-                Console.WriteLine(mySelectQuery);
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
                 connect.Open();
                 MySqlDataReader myReader;
@@ -43,8 +42,7 @@ namespace EntTracker
                     while (myReader.Read())
                     {
                         this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4), myReader.GetString(5));
-                        //review = myReader.GetString(5);
-                        Console.WriteLine(myReader.GetString(1));
+                        location = myReader.GetString(6);
                     }
                 }
                 finally
@@ -98,18 +96,14 @@ namespace EntTracker
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                //Environment.Exit(0);
-                Console.WriteLine("exit");
                 Application.Exit();
             }
             if (this.DialogResult == DialogResult.Cancel)
             {
-                Console.WriteLine("here");
                 Application.Exit();
             }
             if (this.DialogResult == DialogResult.Abort)
             {
-                Console.WriteLine("this");
                 Application.Exit();
             }
         }
@@ -124,7 +118,6 @@ namespace EntTracker
                 status = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString();
                 genres = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value.ToString();
                 review = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString();
-                Console.WriteLine(title);
                 this.Hide();
                 Game gameForm = new Game();
                 gameForm.ShowDialog();
@@ -154,6 +147,10 @@ namespace EntTracker
         public static string getReview()
         {
             return review;
+        }
+        public static string getLocation()
+        {
+            return location;
         }
 
         private void GamesList_FormClosing(object sender, FormClosingEventArgs e)

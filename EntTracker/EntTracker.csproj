@@ -86,6 +86,12 @@
     <Compile Include="BooksList.Designer.cs">
       <DependentUpon>BooksList.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGame.Designer.cs">
+      <DependentUpon>EditGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntTracker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="AddGame.resx">
       <DependentUpon>AddGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditGame.resx">
+      <DependentUpon>EditGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntTracker.resx">
       <DependentUpon>EntTracker.cs</DependentUpon>

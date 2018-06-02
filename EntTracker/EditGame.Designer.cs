@@ -1,6 +1,6 @@
 ﻿namespace EntTracker
 {
-    partial class AddGame
+    partial class EditGame
     {
         /// <summary>
         /// Required designer variable.
@@ -242,7 +242,7 @@
             this.pictureTextBox.TabIndex = 20;
             this.pictureTextBox.TextChanged += new System.EventHandler(this.pictureTextBox_TextChanged);
             // 
-            // AddGame
+            // EditGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,9 +263,9 @@
             this.Controls.Add(this.titleTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AddGame";
+            this.Name = "EditGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Game";
+            this.Text = "Edit Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 
