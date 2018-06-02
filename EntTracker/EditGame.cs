@@ -11,44 +11,63 @@ using System.Windows.Forms;
 
 namespace EntTracker
 {
-    public partial class AddGame : Form
+    public partial class EditGame : Form
     {
-        public AddGame()
+        string originalTitle;
+        
+        public EditGame(string title, string rating, string status, string genres, string review, string location)
         {
             InitializeComponent();
-        }
+            titleTextBox.Text = title;
+            ratingComboBox.Text = rating;
+            statusComboBox.Text = status;
 
+            string[] genresArray = genres.Split(' ');
+            for (int i = 0; i < genresCheckedListBox.Items.Count; i++)
+            {
+                if (genresArray.Contains(genresCheckedListBox.Items[i].ToString()))
+                {
+                    genresCheckedListBox.SetItemChecked(i, true);
+                }
+            }
+
+            reviewRichTextBox.Text = review;
+            pictureTextBox.Text = location;
+            originalTitle = title;
+        }
+        
         private void submitButton_Click(object sender, EventArgs e)
         {
             //Set Game information from form
-            string title = titleTextBox.Text;
-            string rating = ratingComboBox.Text;
-            string status = statusComboBox.Text;
-            string genres = "";
+            string newTitle = titleTextBox.Text;
+            string newRating = ratingComboBox.Text;
+            string newStatus = statusComboBox.Text;
+            string newGenres = "";
             List<string> genresList = new List<string>();
-            for(int i = 0; i < genresCheckedListBox.Items.Count; i++)
+            for (int i = 0; i < genresCheckedListBox.Items.Count; i++)
             {
                 if (genresCheckedListBox.GetItemChecked(i))
                 {
-                    genresList.Add((string)genresCheckedListBox.Items[i] + " ");
+                    genresList.Add((string)genresCheckedListBox.Items[i]);
                 }
             }
-            for(int i = 0; i < genresList.Count; i++)
+            for (int i = 0; i < genresList.Count; i++)
             {
-                genres += genresList[i];
+                newGenres += genresList[i] + " ";
             }
-            string review = reviewRichTextBox.Text;
-            string location = pictureTextBox.Text;
+            string newReview = reviewRichTextBox.Text;
+            string newLocation = pictureTextBox.Text;
 
-            Console.WriteLine("Here!!!!! " + title + " " + rating + " " + status + " " + genres + " " + review + " " + location);
+            
             //Add Game
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
 
-                string mySelectQuery = "use mydb; insert into games values (idGames, '" + title + "', '" + rating + "', '" + status 
-                    + "', '" + genres + "', '" + review + "', '" + location + "');";
+                string mySelectQuery = "use mydb; update games set Title = '" + newTitle + "', Rating = '" + newRating + "', Status = '" 
+                    + newStatus + "', Genres = '" + newGenres + "', Review = '" + newReview + "', Location = '" + newLocation 
+                    + "' where Title = '" + originalTitle + "';";
 
                 Console.WriteLine(mySelectQuery);
 
@@ -63,7 +82,7 @@ namespace EntTracker
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
 
             this.Hide();
             GamesList gamesListForm = new GamesList();
@@ -82,6 +101,6 @@ namespace EntTracker
             //open file selection
         }
 
-        
+
     }
 }

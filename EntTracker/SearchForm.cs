@@ -33,5 +33,12 @@ namespace EntTracker
         {
             return searchText;
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GamesList list = new GamesList();
+            list.ShowDialog();
+        }
     }
 }

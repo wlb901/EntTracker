@@ -13,6 +13,7 @@ namespace EntTracker
 {
     public partial class Game : Form
     {
+        string location = GamesList.getLocation();
         public Game()
         {
             InitializeComponent();
@@ -21,13 +22,13 @@ namespace EntTracker
             string genres = GamesList.getGenres();
             string status = GamesList.getStatus();
             string review = GamesList.getReview();
+            
            
             setTitle(title);
             setRating(rating);
             setGenres(genres);
             setStatus(status);
             setReview(review);
-            
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -74,5 +75,20 @@ namespace EntTracker
                 gamesListForm.ShowDialog();
             }
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GamesList list = new GamesList();
+            list.ShowDialog();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditGame edit = new EditGame(titleBox.Text, ratingBox.Text, statusBox.Text, genresBox.Text, reviewBox.Text, location);
+            edit.ShowDialog();
+        }
+        
     }
 }
