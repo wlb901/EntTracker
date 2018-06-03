@@ -32,7 +32,7 @@ namespace EntTracker
             }
 
             reviewRichTextBox.Text = review;
-            pictureTextBox.Text = location;
+            locationLabel.Text = location;
             originalTitle = title;
         }
         
@@ -56,9 +56,9 @@ namespace EntTracker
                 newGenres += genresList[i] + " ";
             }
             string newReview = reviewRichTextBox.Text;
-            string newLocation = pictureTextBox.Text;
+            string newLocation = locationLabel.Text;
+            newLocation = newLocation.Replace("\\", "\\\\");
 
-            
             //Add Game
             try
             {
@@ -69,7 +69,7 @@ namespace EntTracker
                     + newStatus + "', Genres = '" + newGenres + "', Review = '" + newReview + "', Location = '" + newLocation 
                     + "' where Title = '" + originalTitle + "';";
 
-                Console.WriteLine(mySelectQuery);
+                //Console.WriteLine(mySelectQuery);
 
                 connect.Open();
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
@@ -101,6 +101,12 @@ namespace EntTracker
             //open file selection
         }
 
-
+        private void locationLabel_Click(object sender, EventArgs e)
+        {
+            //open file selection
+            OpenFileDialog file = new OpenFileDialog();
+            DialogResult picLocation = file.ShowDialog();
+            locationLabel.Text = file.FileName;
+        }
     }
 }

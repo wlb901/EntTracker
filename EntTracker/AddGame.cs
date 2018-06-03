@@ -38,19 +38,19 @@ namespace EntTracker
                 genres += genresList[i];
             }
             string review = reviewRichTextBox.Text;
-            string location = pictureTextBox.Text;
-
-            Console.WriteLine("Here!!!!! " + title + " " + rating + " " + status + " " + genres + " " + review + " " + location);
+            string location = pictureLocation.Text;
+            
             //Add Game
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
 
+                location = location.Replace("\\", "\\\\");
                 string mySelectQuery = "use mydb; insert into games values (idGames, '" + title + "', '" + rating + "', '" + status 
                     + "', '" + genres + "', '" + review + "', '" + location + "');";
 
-                Console.WriteLine(mySelectQuery);
+                //Console.WriteLine(mySelectQuery);
 
                 connect.Open();
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
@@ -77,11 +77,12 @@ namespace EntTracker
             gamesListForm.ShowDialog();
         }
 
-        private void pictureTextBox_TextChanged(object sender, EventArgs e)
+        private void pictureLocation_Click(object sender, EventArgs e)
         {
             //open file selection
+            OpenFileDialog file = new OpenFileDialog();
+            DialogResult picLocation = file.ShowDialog();
+            pictureLocation.Text = file.FileName;
         }
-
-        
     }
 }
