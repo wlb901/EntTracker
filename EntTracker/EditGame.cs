@@ -57,7 +57,7 @@ namespace EntTracker
             }
             string newReview = reviewRichTextBox.Text;
             string newLocation = locationLabel.Text;
-            newLocation = newLocation.Replace("\\", "\\\\");
+            //newLocation = newLocation.Replace("\\", "\\\\");
 
             //Add Game
             try
@@ -65,16 +65,20 @@ namespace EntTracker
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
 
-                string mySelectQuery = "use mydb; update games set Title = '" + newTitle + "', Rating = '" + newRating + "', Status = '" 
-                    + newStatus + "', Genres = '" + newGenres + "', Review = '" + newReview + "', Location = '" + newLocation 
-                    + "' where Title = '" + originalTitle + "';";
-
-                //Console.WriteLine(mySelectQuery);
+                string mySelectQuery = "use mydb; update games set Title = @0, Rating = @1, Status = @2, Genres = @3, Review = @4, Location = @5 where Title = '" 
+                    + originalTitle + "';";
 
                 connect.Open();
-                MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
-                myCommand.ExecuteNonQuery();
+                MySqlCommand command = new MySqlCommand(mySelectQuery, connect);
+                command.Parameters.AddWithValue("@0", newTitle);
+                command.Parameters.AddWithValue("@1", newRating);
+                command.Parameters.AddWithValue("@2", newStatus);
+                command.Parameters.AddWithValue("@3", newGenres);
+                command.Parameters.AddWithValue("@4", newReview);
+                command.Parameters.AddWithValue("@5", newLocation);
 
+                command.Prepare();
+                command.ExecuteNonQuery();
                 connect.Close();
             }
 

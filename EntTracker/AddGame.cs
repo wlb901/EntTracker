@@ -46,16 +46,20 @@ namespace EntTracker
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
 
-                location = location.Replace("\\", "\\\\");
-                string mySelectQuery = "use mydb; insert into games values (idGames, '" + title + "', '" + rating + "', '" + status 
-                    + "', '" + genres + "', '" + review + "', '" + location + "');";
-
-                //Console.WriteLine(mySelectQuery);
+           
+                string mySelectQuery = "use mydb; insert into games (Title, Rating, Status, Genres, Review, Location) Values( @0, @1, @2, @3, @4, @5);";
 
                 connect.Open();
-                MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
-                myCommand.ExecuteNonQuery();
+                MySqlCommand command = new MySqlCommand(mySelectQuery, connect);
+                command.Parameters.AddWithValue("@0", title);
+                command.Parameters.AddWithValue("@1", rating);
+                command.Parameters.AddWithValue("@2", status);
+                command.Parameters.AddWithValue("@3", genres);
+                command.Parameters.AddWithValue("@4", review);
+                command.Parameters.AddWithValue("@5", location);
 
+                command.Prepare();
+                command.ExecuteNonQuery();
                 connect.Close();
             }
 

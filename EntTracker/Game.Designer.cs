@@ -121,6 +121,7 @@
             this.reviewBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.reviewBox.Size = new System.Drawing.Size(682, 400);
             this.reviewBox.TabIndex = 6;
+            this.reviewBox.TabStop = false;
             // 
             // titleBox
             // 
@@ -131,6 +132,7 @@
             this.titleBox.ReadOnly = true;
             this.titleBox.Size = new System.Drawing.Size(572, 28);
             this.titleBox.TabIndex = 7;
+            this.titleBox.TabStop = false;
             // 
             // ratingBox
             // 
@@ -141,6 +143,7 @@
             this.ratingBox.ReadOnly = true;
             this.ratingBox.Size = new System.Drawing.Size(44, 28);
             this.ratingBox.TabIndex = 8;
+            this.ratingBox.TabStop = false;
             // 
             // genresBox
             // 
@@ -151,6 +154,7 @@
             this.genresBox.ReadOnly = true;
             this.genresBox.Size = new System.Drawing.Size(572, 28);
             this.genresBox.TabIndex = 9;
+            this.genresBox.TabStop = false;
             // 
             // statusBox
             // 
@@ -161,13 +165,14 @@
             this.statusBox.ReadOnly = true;
             this.statusBox.Size = new System.Drawing.Size(164, 28);
             this.statusBox.TabIndex = 10;
+            this.statusBox.TabStop = false;
             // 
             // editButton
             // 
             this.editButton.Location = new System.Drawing.Point(539, 848);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(75, 45);
-            this.editButton.TabIndex = 11;
+            this.editButton.TabIndex = 13;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
@@ -187,7 +192,7 @@
             this.backButton.Location = new System.Drawing.Point(13, 848);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 45);
-            this.backButton.TabIndex = 13;
+            this.backButton.TabIndex = 11;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
