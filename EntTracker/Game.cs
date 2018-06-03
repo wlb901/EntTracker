@@ -13,7 +13,8 @@ namespace EntTracker
 {
     public partial class Game : Form
     {
-        string location = GamesList.getLocation();
+        
+        
         public Game()
         {
             InitializeComponent();
@@ -22,8 +23,14 @@ namespace EntTracker
             string genres = GamesList.getGenres();
             string status = GamesList.getStatus();
             string review = GamesList.getReview();
+            string location = GamesList.getLocation();
             
-           
+            location = location.Replace("\\", "\\\\");
+            //pictureBox.Image = new Bitmap(location);
+            //Console.WriteLine("location: " + location);
+            pictureBox.ImageLocation = location;
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
             setTitle(title);
             setRating(rating);
             setGenres(genres);
@@ -37,9 +44,9 @@ namespace EntTracker
 
             if (confirmDelete == DialogResult.Yes)
             {
-                Console.WriteLine("Deleted");
+                //Console.WriteLine("Deleted");
                 string title = titleBox.Text;
-                Console.WriteLine(title + " will be deleted");
+                //Console.WriteLine(title + " will be deleted");
                 //Remove from database
                 try
                 {
@@ -48,7 +55,7 @@ namespace EntTracker
 
                     string mySelectQuery = "use mydb; delete from games where title = '" + title + "';";
 
-                    Console.WriteLine(mySelectQuery);
+                    //Console.WriteLine(mySelectQuery);
 
                     connect.Open();
                     MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
@@ -69,7 +76,7 @@ namespace EntTracker
             }
             else
             {
-                Console.WriteLine("Not Deleted");
+                //Console.WriteLine("Not Deleted");
                 this.Hide();
                 GamesList gamesListForm = new GamesList();
                 gamesListForm.ShowDialog();
@@ -85,10 +92,19 @@ namespace EntTracker
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            //string location = "";
             this.Hide();
+            string location = GamesList.getLocation();
+            //location = location.Replace("\\", "\\\\");
             EditGame edit = new EditGame(titleBox.Text, ratingBox.Text, statusBox.Text, genresBox.Text, reviewBox.Text, location);
             edit.ShowDialog();
         }
         
+        private void Game_Load (object sender, EventArgs e)
+        {
+            
+
+            
+        }
     }
 }

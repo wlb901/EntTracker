@@ -41,7 +41,7 @@
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.reviewLabel = new System.Windows.Forms.Label();
             this.pictureLabel = new System.Windows.Forms.Label();
-            this.pictureTextBox = new System.Windows.Forms.TextBox();
+            this.locationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleTextBox
@@ -232,22 +232,22 @@
             this.pictureLabel.TabIndex = 19;
             this.pictureLabel.Text = "Picture";
             // 
-            // pictureTextBox
+            // locationLabel
             // 
-            this.pictureTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pictureTextBox.Location = new System.Drawing.Point(191, 392);
-            this.pictureTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureTextBox.Name = "pictureTextBox";
-            this.pictureTextBox.Size = new System.Drawing.Size(215, 28);
-            this.pictureTextBox.TabIndex = 20;
-            this.pictureTextBox.TextChanged += new System.EventHandler(this.pictureTextBox_TextChanged);
+            this.locationLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.locationLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.locationLabel.Location = new System.Drawing.Point(191, 391);
+            this.locationLabel.Name = "locationLabel";
+            this.locationLabel.Size = new System.Drawing.Size(349, 30);
+            this.locationLabel.TabIndex = 20;
+            this.locationLabel.Click += new System.EventHandler(this.locationLabel_Click);
             // 
             // EditGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 913);
-            this.Controls.Add(this.pictureTextBox);
+            this.Controls.Add(this.locationLabel);
             this.Controls.Add(this.pictureLabel);
             this.Controls.Add(this.reviewLabel);
             this.Controls.Add(this.statusComboBox);
@@ -286,6 +286,6 @@
         private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.Label reviewLabel;
         private System.Windows.Forms.Label pictureLabel;
-        private System.Windows.Forms.TextBox pictureTextBox;
+        private System.Windows.Forms.Label locationLabel;
     }
 }

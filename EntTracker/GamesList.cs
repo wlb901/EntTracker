@@ -43,6 +43,7 @@ namespace EntTracker
                     {
                         this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4), myReader.GetString(5));
                         location = myReader.GetString(6);
+                        //Console.WriteLine("now it's " + location);
                     }
                 }
                 finally
@@ -118,6 +119,7 @@ namespace EntTracker
                 status = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString();
                 genres = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value.ToString();
                 review = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString();
+                //Console.WriteLine("location is : " + location + " at this point");
                 this.Hide();
                 Game gameForm = new Game();
                 gameForm.ShowDialog();
@@ -150,6 +152,41 @@ namespace EntTracker
         }
         public static string getLocation()
         {
+            string location = "";
+            try
+            {
+                string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
+                MySqlConnection connect = new MySqlConnection(connectionInfo);
+
+                //MessageBox.Show("Connected");
+
+                string mySelectQuery = "use mydb; select * from games where Title = '" + title + "';";
+                MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
+                connect.Open();
+                MySqlDataReader myReader;
+                myReader = myCommand.ExecuteReader();
+                try
+                {
+                    while (myReader.Read())
+                    {
+                        //this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4), myReader.GetString(5));
+                        location = myReader.GetString(6);
+                        //Console.WriteLine("now it's " + location);
+                    }
+                }
+                finally
+                {
+                    myReader.Close();
+                    connect.Close();
+                }
+
+                connect.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             return location;
         }
 
