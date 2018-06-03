@@ -49,6 +49,7 @@
             this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleTextBox.Location = new System.Drawing.Point(191, 60);
             this.titleTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.titleTextBox.MaxLength = 100;
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(349, 28);
             this.titleTextBox.TabIndex = 0;
@@ -58,6 +59,7 @@
             this.reviewRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reviewRichTextBox.Location = new System.Drawing.Point(74, 492);
             this.reviewRichTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.reviewRichTextBox.MaxLength = 65535;
             this.reviewRichTextBox.Name = "reviewRichTextBox";
             this.reviewRichTextBox.Size = new System.Drawing.Size(466, 308);
             this.reviewRichTextBox.TabIndex = 8;

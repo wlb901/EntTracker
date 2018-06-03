@@ -46,9 +46,9 @@ namespace EntTracker
                 {
                     while (myReader.Read())
                     {
-                        this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4), myReader.GetString(5));
+                        this.gamesDataGridView.Rows.Add(myReader.GetString(0), myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4));
                         //review = myReader.GetString(5);
-                        Console.WriteLine(myReader.GetString(1));
+                        //Console.WriteLine(myReader.GetString(1));
                     }
                 }
                 finally
@@ -88,7 +88,7 @@ namespace EntTracker
         private void gamesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 title = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 rating = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value.ToString();
@@ -127,5 +127,7 @@ namespace EntTracker
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        
     }
 }
