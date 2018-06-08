@@ -9,6 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+//This form shows everything about a game, including the picture.
+//Has a back button to return to GamesList, an Edit button to edit the game, and a Delete button the delete the game.
+//Delete button should ask "are you sure?"
+
 namespace EntTracker
 {
     public partial class Game : Form
@@ -18,6 +23,7 @@ namespace EntTracker
         public Game()
         {
             InitializeComponent();
+            //Get and set everything
             string title = GamesList.getTitle();
             string rating = GamesList.getRating();
             string genres = GamesList.getGenres();
@@ -25,9 +31,6 @@ namespace EntTracker
             string review = GamesList.getReview();
             string location = GamesList.getLocation();
             
-            location = location.Replace("\\", "\\\\");
-            //pictureBox.Image = new Bitmap(location);
-            //Console.WriteLine("location: " + location);
             pictureBox.ImageLocation = location;
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -38,25 +41,23 @@ namespace EntTracker
             setReview(review);
         }
 
+        //Delete Button. Removes game from database by matching title. Make sure AddGame form blocks adding games with matching titles.
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            //Confirm Delete
             var confirmDelete = MessageBox.Show("Are you sure you want to delete?", "Confirm Delete", MessageBoxButtons.YesNo);
 
+            //If yes, delete from database then return to GamesList
             if (confirmDelete == DialogResult.Yes)
             {
-                //Console.WriteLine("Deleted");
                 string title = titleBox.Text;
-                //Console.WriteLine(title + " will be deleted");
-                //Remove from database
                 try
                 {
                     string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                     MySqlConnection connect = new MySqlConnection(connectionInfo);
 
                     string mySelectQuery = "use mydb; delete from games where title = '" + title + "';";
-
-                    //Console.WriteLine(mySelectQuery);
-
+                    
                     connect.Open();
                     MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
                     myCommand.ExecuteNonQuery();
@@ -68,21 +69,20 @@ namespace EntTracker
                 {
                     MessageBox.Show(ex.Message);
                 }
-                //Close Game.cs Form
+
                 this.Hide();
                 GamesList gamesListForm = new GamesList();
                 gamesListForm.ShowDialog();
 
             }
+            //If no, do nothing
             else
             {
-                //Console.WriteLine("Not Deleted");
-                this.Hide();
-                GamesList gamesListForm = new GamesList();
-                gamesListForm.ShowDialog();
+                //Nothing
             }
         }
 
+        //Back button returns to GamesList
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -90,21 +90,19 @@ namespace EntTracker
             list.ShowDialog();
         }
 
+        //Edit Button brings up EditGame form. This should also send all data for selected game to the EditGame form
         private void editButton_Click(object sender, EventArgs e)
         {
-            //string location = "";
             this.Hide();
             string location = GamesList.getLocation();
-            //location = location.Replace("\\", "\\\\");
             EditGame edit = new EditGame(titleBox.Text, ratingBox.Text, statusBox.Text, genresBox.Text, reviewBox.Text, location);
             edit.ShowDialog();
         }
-        
-        private void Game_Load (object sender, EventArgs e)
-        {
-            
 
-            
+        //Closes Program when X button clicked
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

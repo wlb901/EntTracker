@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//This form is used for adding a new game to the database
+//Rating, Status, and Genres options are all listed in AddGame.Designer.cs
 namespace EntTracker
 {
     public partial class AddGame : Form
@@ -18,6 +20,7 @@ namespace EntTracker
             InitializeComponent();
         }
 
+        //Submit Button adds the game to the database. Title is made to be unique in the database (Duplicate entry popup, returns to GamesList)
         private void submitButton_Click(object sender, EventArgs e)
         {
             //Set Game information from form
@@ -25,7 +28,11 @@ namespace EntTracker
             string rating = ratingComboBox.Text;
             string status = statusComboBox.Text;
             string genres = "";
+
+            //Genres starts off as a list and is converted to a single string
             List<string> genresList = new List<string>();
+
+            //loop to add each item in the checkedListBox to genresList
             for(int i = 0; i < genresCheckedListBox.Items.Count; i++)
             {
                 if (genresCheckedListBox.GetItemChecked(i))
@@ -33,14 +40,17 @@ namespace EntTracker
                     genresList.Add((string)genresCheckedListBox.Items[i] + " ");
                 }
             }
+
+            //loop to add each item of genresList to a single string
             for(int i = 0; i < genresList.Count; i++)
             {
                 genres += genresList[i];
             }
+
             string review = reviewRichTextBox.Text;
             string location = pictureLocation.Text;
             
-            //Add Game
+            //Add Game to database
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
@@ -68,12 +78,12 @@ namespace EntTracker
                 MessageBox.Show(ex.Message);
             }
             
-
             this.Hide();
             GamesList gamesListForm = new GamesList();
             gamesListForm.ShowDialog();
         }
 
+        //Cancel Button returns to GamesList
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -81,6 +91,7 @@ namespace EntTracker
             gamesListForm.ShowDialog();
         }
 
+        //The Picture box (actually a label) should be clickable and bring up a file selection
         private void pictureLocation_Click(object sender, EventArgs e)
         {
             //open file selection

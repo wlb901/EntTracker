@@ -32,11 +32,8 @@ namespace EntTracker
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.addButton = new System.Windows.Forms.Button();
-            this.videosButton = new System.Windows.Forms.Button();
-            this.booksButton = new System.Windows.Forms.Button();
-            this.musicButton = new System.Windows.Forms.Button();
             this.findButton = new System.Windows.Forms.Button();
             this.gamesDataGridView = new System.Windows.Forms.DataGridView();
             this.TitleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +47,7 @@ namespace EntTracker
             // addButton
             // 
             this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.Location = new System.Drawing.Point(32, 563);
+            this.addButton.Location = new System.Drawing.Point(757, 563);
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(94, 45);
@@ -59,46 +56,10 @@ namespace EntTracker
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // videosButton
-            // 
-            this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.videosButton.Location = new System.Drawing.Point(548, 563);
-            this.videosButton.Margin = new System.Windows.Forms.Padding(4);
-            this.videosButton.Name = "videosButton";
-            this.videosButton.Size = new System.Drawing.Size(99, 45);
-            this.videosButton.TabIndex = 6;
-            this.videosButton.Text = "Videos";
-            this.videosButton.UseVisualStyleBackColor = true;
-            this.videosButton.Click += new System.EventHandler(this.videosButton_Click);
-            // 
-            // booksButton
-            // 
-            this.booksButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.booksButton.Location = new System.Drawing.Point(655, 563);
-            this.booksButton.Margin = new System.Windows.Forms.Padding(4);
-            this.booksButton.Name = "booksButton";
-            this.booksButton.Size = new System.Drawing.Size(94, 45);
-            this.booksButton.TabIndex = 7;
-            this.booksButton.Text = "Books";
-            this.booksButton.UseVisualStyleBackColor = true;
-            this.booksButton.Click += new System.EventHandler(this.booksButton_Click);
-            // 
-            // musicButton
-            // 
-            this.musicButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicButton.Location = new System.Drawing.Point(757, 563);
-            this.musicButton.Margin = new System.Windows.Forms.Padding(4);
-            this.musicButton.Name = "musicButton";
-            this.musicButton.Size = new System.Drawing.Size(94, 45);
-            this.musicButton.TabIndex = 8;
-            this.musicButton.Text = "Music";
-            this.musicButton.UseVisualStyleBackColor = true;
-            this.musicButton.Click += new System.EventHandler(this.musicButton_Click);
-            // 
             // findButton
             // 
             this.findButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findButton.Location = new System.Drawing.Point(134, 563);
+            this.findButton.Location = new System.Drawing.Point(655, 563);
             this.findButton.Margin = new System.Windows.Forms.Padding(4);
             this.findButton.Name = "findButton";
             this.findButton.Size = new System.Drawing.Size(94, 45);
@@ -119,14 +80,14 @@ namespace EntTracker
             this.StatusColumn,
             this.GenresColumn,
             this.ReviewColumn});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gamesDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gamesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.gamesDataGridView.Location = new System.Drawing.Point(32, 13);
             this.gamesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.gamesDataGridView.Name = "gamesDataGridView";
@@ -178,9 +139,6 @@ namespace EntTracker
             this.ClientSize = new System.Drawing.Size(884, 618);
             this.Controls.Add(this.gamesDataGridView);
             this.Controls.Add(this.findButton);
-            this.Controls.Add(this.musicButton);
-            this.Controls.Add(this.booksButton);
-            this.Controls.Add(this.videosButton);
             this.Controls.Add(this.addButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -195,9 +153,6 @@ namespace EntTracker
 
         #endregion
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button videosButton;
-        private System.Windows.Forms.Button booksButton;
-        private System.Windows.Forms.Button musicButton;
         private System.Windows.Forms.Button findButton;
         private System.Windows.Forms.DataGridView gamesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn TitleColumn;

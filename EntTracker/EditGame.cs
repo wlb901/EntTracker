@@ -9,12 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//EditGames form creates an option to edit game information.
+//Should start filled in with previous data
+//Shoud Update game in database by original title
+//Looks exactly like AddGame form but already filled in
 namespace EntTracker
 {
     public partial class EditGame : Form
     {
         string originalTitle;
         
+        //Gets game data from Game form
         public EditGame(string title, string rating, string status, string genres, string review, string location)
         {
             InitializeComponent();
@@ -22,6 +27,7 @@ namespace EntTracker
             ratingComboBox.Text = rating;
             statusComboBox.Text = status;
 
+            //Must split genres string back into array
             string[] genresArray = genres.Split(' ');
             for (int i = 0; i < genresCheckedListBox.Items.Count; i++)
             {
@@ -36,6 +42,7 @@ namespace EntTracker
             originalTitle = title;
         }
         
+        //Submit Button updates all new information in the database (even if unchanged)
         private void submitButton_Click(object sender, EventArgs e)
         {
             //Set Game information from form
@@ -57,9 +64,8 @@ namespace EntTracker
             }
             string newReview = reviewRichTextBox.Text;
             string newLocation = locationLabel.Text;
-            //newLocation = newLocation.Replace("\\", "\\\\");
 
-            //Add Game
+            //Update Game
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
@@ -86,13 +92,13 @@ namespace EntTracker
             {
                 MessageBox.Show(ex.Message);
             }
-
-
+            
             this.Hide();
             GamesList gamesListForm = new GamesList();
             gamesListForm.ShowDialog();
         }
 
+        //Cancel Button returns to GameList
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -100,11 +106,7 @@ namespace EntTracker
             gamesListForm.ShowDialog();
         }
 
-        private void pictureTextBox_TextChanged(object sender, EventArgs e)
-        {
-            //open file selection
-        }
-
+        //LocationLable is clickable to select picture location
         private void locationLabel_Click(object sender, EventArgs e)
         {
             //open file selection
