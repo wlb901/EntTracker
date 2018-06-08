@@ -13,7 +13,7 @@ EntTracker is an Entertainment Tracker for Video Games. Keep track of your favor
 ### Games List
 This is what you will see when you start the app.
 
-![alt text](docs/Screenshots/GameList.PNG)
+![alt text](docs/Screenshots/GamesList.PNG)
 
 Here you can sort each column by clicking on the column headers. 
 
