@@ -118,9 +118,9 @@
             this.genreLabel.Location = new System.Drawing.Point(69, 184);
             this.genreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(63, 24);
+            this.genreLabel.Size = new System.Drawing.Size(72, 24);
             this.genreLabel.TabIndex = 13;
-            this.genreLabel.Text = "Genre";
+            this.genreLabel.Text = "Genres";
             // 
             // ratingComboBox
             // 
