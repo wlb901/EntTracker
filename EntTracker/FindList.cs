@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//This form return results from the SearchForm. Results displayed exactly like GamesList
+//Start on this form after the Find button is clicked on GamesList
+
 namespace EntTracker
 {
     public partial class FindList : Form
@@ -23,21 +26,19 @@ namespace EntTracker
         {
             InitializeComponent();
 
+            //First pull up search box
             SearchForm search = new SearchForm();
             search.ShowDialog();
             string title = search.getSearchText();
-            Console.WriteLine(title + " results of search");
 
+            //Get and show results form the SearchForm
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
-
-                //MessageBox.Show("Connected");
+                
 
                 string mySelectQuery = "use mydb; select * from games where title like '" + title + "%';";
-                Console.WriteLine("Test");
-                Console.WriteLine(mySelectQuery);
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
                 connect.Open();
                 MySqlDataReader myReader;
@@ -47,8 +48,6 @@ namespace EntTracker
                     while (myReader.Read())
                     {
                         this.gamesDataGridView.Rows.Add(myReader.GetString(0), myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4));
-                        //review = myReader.GetString(5);
-                        //Console.WriteLine(myReader.GetString(1));
                     }
                 }
                 finally
@@ -67,8 +66,7 @@ namespace EntTracker
 
         }
 
-        
-
+        //Back Button return to GamesList
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -76,6 +74,7 @@ namespace EntTracker
             gamesList.ShowDialog();
         }
 
+        //Find Button starts another FindList to search again
         private void findButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -83,8 +82,7 @@ namespace EntTracker
             find.ShowDialog();
         }
 
-        
-
+        //Handle title click in gamesDataGridView, just like on the GamesList form
         private void gamesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -102,6 +100,7 @@ namespace EntTracker
             }
         }
 
+        //Get strings
         public static string getTitle()
         {
             return title;
@@ -123,6 +122,7 @@ namespace EntTracker
             return review;
         }
 
+        //Closes Program when X button clicked
         private void GamesList_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();

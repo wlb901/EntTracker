@@ -9,6 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ *This is now the main form shown at startup. 
+ * It should be a list of all games and show Title, Rating, Status, Genres, and Review
+ * Clicking the Title of a game will go to that game's page.
+ * Buttons to Add a new game and Search for a game (Find).
+ * Each column should be sortable. 
+ */
 namespace EntTracker
 {
     public partial class GamesList : Form
@@ -23,14 +30,12 @@ namespace EntTracker
         public GamesList()
         {
             InitializeComponent();
+
             //Add games to List
-            
             try
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
-
-                //MessageBox.Show("Connected");
 
                 string mySelectQuery = "use mydb; select * from games;";
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
@@ -43,7 +48,6 @@ namespace EntTracker
                     {
                         this.gamesDataGridView.Rows.Add(myReader.GetString(0), myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4));
                         location = myReader.GetString(5);
-                        //Console.WriteLine("now it's " + location);
                     }
                 }
                 finally
@@ -61,12 +65,8 @@ namespace EntTracker
             }
 
         }
-
-        private void booksButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        //Add a new game
         private void addButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -74,44 +74,18 @@ namespace EntTracker
             addGameForm.ShowDialog();
         }
 
+        //Search for a game
         private void findButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             FindList findGamesList = new FindList();
             findGamesList.ShowDialog();
-            //SearchForm search = new SearchForm();
-            //search.ShowDialog();
         }
 
-        private void videosButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void musicButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void GameListClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                Application.Exit();
-            }
-            if (this.DialogResult == DialogResult.Cancel)
-            {
-                Application.Exit();
-            }
-            if (this.DialogResult == DialogResult.Abort)
-            {
-                Application.Exit();
-            }
-        }
-
+        //Function for clicking game title. This should set all game strings to contents of cells
         private void gamesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            //Only clickable on fist Column and at least row 0
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 title = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
@@ -119,17 +93,13 @@ namespace EntTracker
                 status = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 2].Value.ToString();
                 genres = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 3].Value.ToString();
                 review = gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex + 4].Value.ToString();
-                //Console.WriteLine("location is : " + location + " at this point");
                 this.Hide();
                 Game gameForm = new Game();
                 gameForm.ShowDialog();
-            }
-            //DataGridViewImageCell cell = (DataGridViewImageCell)
-            //gamesDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-            //Console.WriteLine(sender);
+            };
         }
 
+        //Getters to return all strings
         public static string getTitle()
         {
             return title;
@@ -150,6 +120,7 @@ namespace EntTracker
         {
             return review;
         }
+        //Picture location is not in GamesList. Must get it from the database
         public static string getLocation()
         {
             string location = "";
@@ -157,9 +128,7 @@ namespace EntTracker
             {
                 string connectionInfo = "datasource = 127.0.0.1; port = 3306; username = root; password = password";
                 MySqlConnection connect = new MySqlConnection(connectionInfo);
-
-                //MessageBox.Show("Connected");
-
+                
                 string mySelectQuery = "use mydb; select * from games where Title = '" + title + "';";
                 MySqlCommand myCommand = new MySqlCommand(mySelectQuery, connect);
                 connect.Open();
@@ -169,9 +138,7 @@ namespace EntTracker
                 {
                     while (myReader.Read())
                     {
-                        //this.gamesDataGridView.Rows.Add(myReader.GetString(1), myReader.GetString(2), myReader.GetString(3), myReader.GetString(4), myReader.GetString(5));
                         location = myReader.GetString(5);
-                        //Console.WriteLine("now it's " + location);
                     }
                 }
                 finally
@@ -190,6 +157,25 @@ namespace EntTracker
             return location;
         }
 
+        //Go to Videos list
+        private void videosButton_Click(object sender, EventArgs e)
+        {
+            //Removed
+        }
+
+        //Go to Music list
+        private void musicButton_Click(object sender, EventArgs e)
+        {
+            //Removed
+        }
+
+        //Go to books list
+        private void booksButton_Click(object sender, EventArgs e)
+        {
+            //Removed
+        }
+
+        //Closes Program when X button clicked
         private void GamesList_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
