@@ -68,7 +68,7 @@ When finished, click Submit to submit the game, or click Cancel to return to Gam
 
 ![alt text](docs/Screenshots/SearchForm.PNG)
 
-Enter a title or biggining of a title to search.
+Enter a title or beginning of a title to search.
 
 ### Find List
 
